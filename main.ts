@@ -1,11 +1,18 @@
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    music.playMelody("F A G F A G F A ", 1735)
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (true) {
-        Jumper.setVelocity(0, -125)
+scene.onHitWall(SpriteKind.Player, function (sprite, location) {
+    if (sprite.bottom < location.y) {
+        touching_ground = true
     }
 })
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.playMelody("F A B B A B B A ", 1735)
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (touching_ground) {
+        Jumper.setVelocity(0, -125)
+        touching_ground = false
+    }
+})
+let touching_ground = false
 let Jumper: Sprite = null
 tiles.setTilemap(tilemap`level1`)
 Jumper = sprites.create(img`
@@ -30,6 +37,7 @@ tiles.placeOnTile(Jumper, tiles.getTileLocation(0, 14))
 scene.cameraFollowSprite(Jumper)
 Jumper.ay = 150
 let Gound_Jump_ability = true
+touching_ground = true
 game.onUpdate(function () {
     Jumper.x += controller.dx()
 })
