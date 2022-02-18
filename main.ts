@@ -1,5 +1,10 @@
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.playMelody("F A G F A G F A ", 1735)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    Jumper.setVelocity(0, -125)
+    if (true) {
+        Jumper.setVelocity(0, -125)
+    }
 })
 let Jumper: Sprite = null
 tiles.setTilemap(tilemap`level1`)
@@ -24,6 +29,7 @@ Jumper = sprites.create(img`
 tiles.placeOnTile(Jumper, tiles.getTileLocation(0, 14))
 scene.cameraFollowSprite(Jumper)
 Jumper.ay = 150
+let Gound_Jump_ability = true
 game.onUpdate(function () {
     Jumper.x += controller.dx()
 })
