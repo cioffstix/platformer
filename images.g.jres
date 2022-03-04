@@ -1,0 +1,12 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAAADu7u7uDgAA7iIiIu7OAOAiREQk4s4ALkJFIiLuwgAuRCIiIiLOAC4kIkIi4s6AKGJmJiIkzGbod3cmIiLOYIZ3ZyJC4gwAZncmQuLuDABgZyIiIu4MAHZ3Zy7izgBgZ2h35+4MAIAIhnZ3zAAAAACAYGYGAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "smallStrawberry"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}

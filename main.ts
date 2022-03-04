@@ -4,7 +4,7 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    music.playMelody("F A B B A B B A ", 1735)
+    music.playMelody("F C5 B B A B B F ", 150)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (touching_ground) {
@@ -38,6 +38,7 @@ scene.cameraFollowSprite(Jumper)
 Jumper.ay = 150
 let Gound_Jump_ability = true
 touching_ground = true
+let item = sprites.create(assets.image`smallStrawberry`, SpriteKind.Food)
 game.onUpdate(function () {
     Jumper.x += controller.dx()
 })
