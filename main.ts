@@ -4,7 +4,7 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    music.playMelody("F C5 B B A B B F ", 150)
+    item = sprites.create(assets.image`smallStrawberry`, SpriteKind.Food)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (touching_ground) {
@@ -12,6 +12,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         touching_ground = false
     }
 })
+controller.C.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite = sprites.create(assets.image`smallApple`, SpriteKind.Food)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+let mySprite: Sprite = null
+let item: Sprite = null
 let touching_ground = false
 let Jumper: Sprite = null
 tiles.setTilemap(tilemap`level1`)
@@ -38,7 +46,6 @@ scene.cameraFollowSprite(Jumper)
 Jumper.ay = 150
 let Gound_Jump_ability = true
 touching_ground = true
-let item = sprites.create(assets.image`smallStrawberry`, SpriteKind.Food)
 game.onUpdate(function () {
     Jumper.x += controller.dx()
 })
