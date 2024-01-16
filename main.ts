@@ -24,6 +24,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.C.onEvent(ControllerButtonEvent.Pressed, function () {
 	
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, function (sprite, location) {
+    game.over(true)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeScoreBy(5)
@@ -35,6 +38,7 @@ let H_I_G_H_I_S_T = 0
 let touching_ground = false
 let Jumper: Sprite = null
 tiles.setTilemap(tilemap`level6`)
+scene.setBackgroundColor(9)
 Jumper = sprites.create(assets.image`Ducky`, SpriteKind.Player)
 tiles.placeOnTile(Jumper, tiles.getTileLocation(0, 30))
 scene.cameraFollowSprite(Jumper)
@@ -46,7 +50,7 @@ info.setScore(0)
 H_I_G_H_I_S_T = 600
 L_A_S_T = 78
 Make_food()
-music.playMelody("C5 B C5 B C5 B A G ", 200)
+music.playMelody("F B A G C5 E D G ", 200)
 game.onUpdate(function () {
     Jumper.x += controller.dx()
 })
