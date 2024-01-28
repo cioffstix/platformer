@@ -29,6 +29,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, f
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
+    music.playMelody("C5 A G E B F G C ", 300)
     info.changeScoreBy(5)
 })
 let CRAZY: Sprite = null
@@ -50,7 +51,6 @@ info.setScore(0)
 H_I_G_H_I_S_T = 600
 L_A_S_T = 78
 Make_food()
-music.playMelody("F B A G C5 E D G ", 200)
 game.onUpdate(function () {
     Jumper.x += controller.dx()
 })

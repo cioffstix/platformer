@@ -43,22 +43,22 @@ c e e 2 2 2 2 2 2 2 2 2 2 4 2 e
 `;
             case "B5s#mf0==FO;C@(@R%x;":
             case "Ducky":return img`
-. . . . . . . . . . b 5 b . . . 
-. . . . . . . . . b 5 b . . . . 
-. . . . . . . . . b c . . . . . 
-. . . . . . b b b b b b . . . . 
-. . . . . b b 5 5 5 5 5 b . . . 
-. . . . b b 5 d 1 f 5 5 d f . . 
-. . . . b 5 5 1 f f 5 d 4 c . . 
-. . . . b 5 5 d f b d d 4 4 . . 
-b d d d b b d 5 5 5 4 4 4 4 4 b 
-b b d 5 5 5 b 5 5 4 4 4 4 4 b . 
-b d c 5 5 5 5 d 5 5 5 5 5 b . . 
-c d d c d 5 5 b 5 5 5 5 5 5 b . 
-c b d d c c b 5 5 5 5 5 5 5 b . 
-. c d d d d d d 5 5 5 5 5 d b . 
-. . c b d d d d d 5 5 5 b b . . 
-. . . c c c c c c c c b b . . . 
+. . . . f f f f f . . . . . . . 
+. . . f e e e e e f . . . . . . 
+. . f d d d d e e e f . . . . . 
+. c d f d d f d e e f f . . . . 
+. c d f d d f d e e d d f . . . 
+c d e e d d d d e e b d c . . . 
+c d d d d c d d e e b d c . . . 
+c c c c c d d e e e f c . . . . 
+. f d d d d e e e f f . . . . . 
+. . f f f f f e e e e f . . . . 
+. . . . f f e e e e e e f . f f 
+. . . f e e f e e f e e f . e f 
+. . f e e f e e f e e e f . e f 
+. f b d f d b f b b f e f f e f 
+. f d d f d d f d d b e f f f f 
+. . f f f f f f f f f f f f f . 
 `;
         }
         return null;
