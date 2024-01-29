@@ -21,16 +21,56 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    Jumper.setImage(img`
+        . . . . f f f f f . . . . . . . 
+        . . . f e e e e e f . . . . . . 
+        . . f d d d d e e e f . . . . . 
+        . c d f d d f d e e f f . . . . 
+        . c d f d d f d e e d d f . . . 
+        c d e e d d d d e e b d c . . . 
+        c d d d d c d d e e b d c . . . 
+        c c c c c d d e e e f c . . . . 
+        . f d d d d e e e f f . . . . . 
+        . . f f f f f e e e e f . . . . 
+        . . . . f f e e e e e e f . f f 
+        . . . f e e f e e f e e f . e f 
+        . . f e e f e e f e e e f . e f 
+        . f b d f d b f b b f e f f e f 
+        . f d d f d d f d d b e f f f f 
+        . . f f f f f f f f f f f f f . 
+        `)
+})
 controller.C.onEvent(ControllerButtonEvent.Pressed, function () {
 	
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, function (sprite, location) {
     game.over(true)
 })
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    Jumper.setImage(img`
+        . . . . . . . f f f f f . . . . 
+        . . . . . . f e e e e e f . . . 
+        . . . . . f e e e d d d d f . . 
+        . . . . f f e e d f d d f d c . 
+        . . . f d d e e d f d d f d c . 
+        . . . c d b e e d d d d e e d c 
+        f f . c d b e e d d c d d d d c 
+        f e f . c f e e d d d c c c c c 
+        f e f . . f f e e d d d d d f . 
+        f e f . f e e e e f f f f f . . 
+        f e f f e e e e e e e f . . . . 
+        . f f e e e e f e f f e f . . . 
+        . . f e e e e f e f f e f . . . 
+        . . . f e f f b d f b d f . . . 
+        . . . f d b b d d c d d f . . . 
+        . . . f f f f f f f f f . . . . 
+        `)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
     music.playMelody("C5 A G E B F G C ", 300)
-    info.changeScoreBy(5)
+    info.changeScoreBy(100)
 })
 let CRAZY: Sprite = null
 let item: Sprite = null
